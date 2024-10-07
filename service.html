@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1000; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      max-width: 500px; /* Limit width */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Services</h1>
+    <p>Empowering Coastal and Marine Solutions</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog-single.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Explore Our Services</h2>
+    <section id="services">
+      
+
+      <!-- Community Awareness Service -->
+      <div class="service-item">
+        <h3>Community Awareness</h3>
+        <p>We work closely with local communities to increase awareness about sustainable marine and coastal practices. Join our workshops and educational sessions to learn more.</p>
+        <button class="book-btn" onclick="openBookingForm('Community Awareness')">Book Now</button>
+      </div>
+
+      <!-- Research Assistance Service -->
+      <div class="service-item">
+        <h3>Research Assistance</h3>
+        <p>Whether you're a student, researcher, or organization, we provide expert guidance and resources to assist you in your marine and coastal research.</p>
+        <button class="book-btn" onclick="openBookingForm('Research Assistance')">Book Now</button>
+      </div>
+
+      <!-- Consultancy Service -->
+      <div class="service-item">
+        <h3>Consultancy</h3>
+        <p>Our consultancy services focus on helping businesses and organizations implement sustainable marine solutions and conservation strategies.</p>
+        <button class="book-btn" onclick="openBookingForm('Consultancy')">Book Now</button>
+      </div>
+      </section>
+
+    
+
+    <!-- Booking Form Modal -->
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBookingForm()">&times;</span>
+        <h2>Book a Service</h2>
+        <form action="submit_booking.php" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="service">Service:</label>
+          <select id="service" name="service">
+            <option value="Community Awareness">Community Awareness</option>
+            <option value="Research Assistance">Research Assistance</option>
+            <option value="Consultancy">Consultancy</option>
+          </select>
+
+          <label for="date">Preferred Date:</label>
+          <input type="date" id="date" name="date" required>
+
+          <label for="time">Preferred Time:</label>
+          <input type="time" id="time" name="time" required>
+
+          <label for="notes">Additional Notes:</label>
+          <textarea id="notes" name="notes"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+<!-- Footer Area -->
+<footer id="footer" class="footer">
+
+  <!-- Copyright -->
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+          <div class="copyright-content">
+            <p>© Copyright 2024 |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">zanzimarinesolution.com</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ End Copyright -->
+</footer>
+
+<!--/ End Footer Area -->
+
+
+  <script>
+    // Function to open the booking form modal with the selected service
+    function openBookingForm(service) {
+      // Show the modal
+      document.getElementById('bookingModal').style.display = 'block';
+      
+      // Pre-select the service in the dropdown
+      document.getElementById('service').value = service;
+
+      // Scroll to the top of the modal
+      document.getElementById('bookingModal').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Function to close the booking form modal
+    function closeBookingForm() {
+      document.getElementById('bookingModal').style.display = 'none';
+    }
+
+    // Close the modal when clicking anywhere outside of the modal
+    window.onclick = function(event) {
+      const modal = document.getElementById('bookingModal');
+      if (event.target === modal) {
+        closeBookingForm();
+      }
+    }
+  </script>
+</body>
+</html>
