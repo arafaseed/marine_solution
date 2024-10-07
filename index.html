@@ -49,21 +49,22 @@
 		<header class="header" >
 			<!-- Topbar -->
 			<div class="topbar">
-				<div class="container d-flex align-items-center"> <!-- Add flex and center alignment -->
-					<img src="img/logo.png" style="height: 120px; width: auto; margin-right: 10px;"> <!-- Changed margin to right -->
+				<div class="container d-flex flex-column flex-md-row align-items-center"> <!-- Use column on small screens and row on medium and above -->
+					<img src="img/logo.png" style="height: 120px; width: auto; margin-bottom: 10px; margin-right: 10px;"> <!-- Changed margin to bottom for small screens -->
 					
-					<div class="col-lg-6 col-md-7 col-12">
+					<div class="col-lg-6 col-md-7 col-12 text-center text-md-left"> <!-- Center text on small screens -->
 						<label class="responsive-heading">ZANZI MARIN AND COASTAL SOLUTION</label>
 					</div>
 			
-					<div class="col-lg-6 col-md-5 col-12">
-						<ul class="top-contact">
-							<li><i class="fa fa-phone"></i><a href="tel:+255773230456">+255 773 230 456</a></li>
+					<div class="col-lg-6 col-md-5 col-12 text-center text-md-right"> <!-- Center text on small screens -->
+						<ul class="top-contact list-unstyled d-flex flex-column flex-md-row justify-content-md-end"> <!-- Align contacts on larger screens -->
+							<li class="mr-3"><i class="fa fa-phone"></i><a href="tel:+255773230456">+255 773 230 456</a></li>
 							<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">mussa_tumu@yahoo.com</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
+			
 			
 			<!-- End Topbar -->
 			<!-- Header Inner -->
